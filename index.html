@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignBridge - AI-Powered Sign Language Translator</title>
+    <meta name="description" content="Real-time sign language translation for seamless communication between hearing and deaf communities.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <img src="icon.png" alt="SignBridge Logo" class="logo-img">
+                <h1>SignBridge</h1>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="animate-fade-in">Breaking Barriers in Communication</h1>
+                    <p class="animate-fade-in delay-1">Translate between sign language and text in real-time with our AI-powered technology.</p>
+                    
+                    <div class="stats-container animate-fade-in delay-2">
+                        <div class="stat">
+                            <span class="stat-number">5%</span>
+                            <span class="stat-text">of global population has hearing loss</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">70M+</span>
+                            <span class="stat-text">people use sign language worldwide</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image animate-slide-in">
+                    <iframe 
+                          width="560" 
+                          height="315" 
+                          src="https://www.youtube.com/embed/-sNhK56zC04?autoplay=1&loop=1&playlist=-sNhK56zC04" 
+                          frameborder="0" 
+                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                         allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <section class="translation-options">
+                <h2 class="section-title animate-fade-in">Choose Translation Mode</h2>
+                <p class="section-subtitle animate-fade-in delay-1">Select how you want to translate</p>
+                
+                <div class="options-container">
+                    <div class="option-card animate-slide-up delay-2" id="text-to-sign">
+                        <div class="option-icon">
+                            <i class="fas fa-keyboard"></i>
+                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-hands"></i>
+                        </div>
+                        <h3>Text to Sign Language</h3>
+                        <p>Convert written text into animated sign language gestures</p>
+                        <button class="btn btn-primary">Start Translating</button>
+                    </div>
+                    
+                    <div class="option-card animate-slide-up delay-3" id="sign-to-text">
+                        <div class="option-icon">
+                            <i class="fas fa-hands"></i>
+                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-font"></i>
+                        </div>
+                        <h3>Sign Language to Text</h3>
+                        <p>Capture sign language gestures and convert them to text</p>
+                        <button class="btn btn-primary">Start Translating</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <h2 class="section-title animate-fade-in">Key Features</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card animate-slide-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Real-time Translation</h3>
+                        <p>Experience instant translation with minimal delay</p>
+                    </div>
+                    
+                    <div class="feature-card animate-slide-up delay-1">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Powered</h3>
+                        <p>Advanced machine learning models for accurate recognition</p>
+                    </div>
+                    
+                    <div class="feature-card animate-slide-up delay-2">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Works Everywhere</h3>
+                        <p>Use on any device with a camera and internet connection</p>
+                    </div>
+                    
+                    <div class="feature-card animate-slide-up delay-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Privacy-Focused</h3>
+                        <p>Your data stays on your device and is never stored</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="how-it-works">
+                <h2 class="section-title animate-fade-in">How It Works</h2>
+                
+                <div class="steps-container">
+                    <div class="step animate-slide-up">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Choose Your Mode</h3>
+                            <p>Select whether you want to translate from text to sign language or from sign language to text</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step animate-slide-up delay-1">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Input Your Content</h3>
+                            <p>Type text or use your camera to capture sign language gestures</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step animate-slide-up delay-2">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Get Instant Translation</h3>
+                            <p>View the translated output in real-time on your screen</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta">
+                <div class="cta-content animate-fade-in">
+                    <h2>Ready to Start Translating?</h2>
+                    <p>Choose a translation mode and experience seamless communication</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary">Text to Sign</button>
+                        <button class="btn btn-primary">Sign to Text</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="icon.png" alt="SignBridge Logo">
+                    <span>SignBridge</span>
+                </div>
+                <p>Breaking communication barriers with AI technology</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p class="copyright">&copy; 2025 SignBridge. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
