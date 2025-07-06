@@ -18,6 +18,10 @@ ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.route("/", methods=["GET"])
+def index():
+    return "Backend is running!", 200
+
 @app.route("/predict", methods=["POST"])
 def predict():
     if "image" not in request.files:
