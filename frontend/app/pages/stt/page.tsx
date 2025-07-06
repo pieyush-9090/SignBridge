@@ -30,7 +30,7 @@ const SignToTextPage = () => {
             const formData = new FormData();
             formData.append('image', blob, 'frame.jpg');
             try {
-              const response = await fetch('https://signbridge-5ai3.onrender.com', {
+              const response = await fetch('https://signbridge-5ai3.onrender.com/predict', {
                 method: 'POST',
                 body: formData,
               });
