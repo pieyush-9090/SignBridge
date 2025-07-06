@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Import CORS
+from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import os
 from ultralytics import YOLO
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS
+CORS(app)
 
 MODEL_PATH = "weights/best.pt"
 if not os.path.exists(MODEL_PATH):
@@ -14,6 +14,8 @@ if not os.path.exists(MODEL_PATH):
 model = YOLO(MODEL_PATH)
 
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
+
+app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1 MB upload limit
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -59,6 +61,4 @@ def predict():
 
     return jsonify({"error": "Invalid file format"}), 400
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, host="0.0.0.0", port=port)  # Allows access from different devices
+# The 'app' object will be served by gunicorn in Hugging Face Spaces Docker deployment.
