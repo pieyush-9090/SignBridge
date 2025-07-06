@@ -26,15 +26,7 @@ const TextToSignPage = () => {
     return () => clearTimeout(timer);
   }, [inputText]);
 
-  // Process text when debounced text changes
-  useEffect(() => {
-    if (debouncedText.trim()) {
-      processText();
-    } else {
-      setGeneratedSigns([]);
-    }
-  }, [debouncedText]);
-
+  // Move processText definition above useEffect
   const processText = useCallback(async () => {
     if (!debouncedText.trim()) {
       setGeneratedSigns([]);
@@ -60,6 +52,13 @@ const TextToSignPage = () => {
       setIsGenerating(false);
     }
   }, [debouncedText]);
+
+  useEffect(() => {
+    if (debouncedText) {
+      processText();
+      setGeneratedSigns([]);
+    }
+  }, [debouncedText, processText]);
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputText(e.target.value);

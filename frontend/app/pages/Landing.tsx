@@ -1,5 +1,4 @@
 "use client";
-import FloatingPaths from '../components/hero/FloatingPaths';
 import BackgroundPaths from '../components/hero/BackgroundPaths';
 import Navbar from '../components/Navbar';
 import About from '../components/About';
