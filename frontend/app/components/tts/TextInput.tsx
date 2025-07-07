@@ -7,7 +7,6 @@ interface TextInputProps {
   inputText: string;
   isGenerating: boolean;
   onTextChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  onGenerateSigns: () => void;
   onClearAll: () => void;
 }
 
@@ -15,16 +14,8 @@ const TextInput: React.FC<TextInputProps> = ({
   inputText, 
   isGenerating, 
   onTextChange, 
-  onGenerateSigns, 
   onClearAll 
 }) => {
-  const quickActions = [
-    { text: 'HELLO', label: 'Hello' },
-    { text: 'THANK YOU', label: 'Thank you' },
-    { text: 'NICE TO MEET YOU', label: 'Nice to meet you' },
-    { text: 'I LOVE YOU', label: 'I love you' }
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

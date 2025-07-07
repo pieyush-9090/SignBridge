@@ -6,13 +6,11 @@ import { motion } from 'framer-motion';
 interface TranslatedTextProps {
   translatedText: string;
   isProcessing: boolean;
-  onClearText: () => void;
 }
 
 const TranslatedText: React.FC<TranslatedTextProps> = ({ 
   translatedText, 
-  isProcessing, 
-  onClearText 
+  isProcessing
 }) => {
   return (
     <motion.div

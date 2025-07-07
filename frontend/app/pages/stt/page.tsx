@@ -35,8 +35,13 @@ const SignToTextPage = () => {
                 body: formData,
               });
               const data = await response.json();
+              interface Prediction {
+                class: string;
+                confidence: number;
+                bbox: number[];
+              }
               if (data.predictions && data.predictions.length > 0) {
-                setTranslatedText(data.predictions.map((p: any) => p.class).join(', '));
+                setTranslatedText(data.predictions.map((p: Prediction) => p.class).join(', '));
                 setPrediction({
                   class: data.predictions[0].class,
                   confidence: data.predictions[0].confidence,
@@ -46,7 +51,7 @@ const SignToTextPage = () => {
                 setTranslatedText('No sign detected.');
                 setPrediction(null);
               }
-            } catch (err) {
+            } catch (_err) {
               setTranslatedText('Error contacting backend.');
               setPrediction(null);
             }
@@ -127,7 +132,6 @@ const SignToTextPage = () => {
             <TranslatedText 
               translatedText={translatedText}
               isProcessing={isProcessing}
-              onClearText={clearText}
             />
             <Instructions />
           </div>

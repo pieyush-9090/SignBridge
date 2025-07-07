@@ -18,8 +18,6 @@ const CameraFeed: React.FC<CameraFeedProps> = ({
   videoRef,
   prediction
 }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

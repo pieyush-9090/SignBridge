@@ -30,12 +30,6 @@ const SignAnimation: React.FC<SignAnimationProps> = ({ generatedSigns, isGenerat
     }
   };
 
-  const handleDownload = async () => {
-    if (!gridRef.current) return;
-    // Use html2canvas if you want to implement download as image
-    // (not included here for brevity, but can be added back if needed)
-  };
-
   return (
     <>
       <div className="flex items-center justify-between w-full px-2 mb-4">
