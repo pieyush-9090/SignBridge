@@ -30,7 +30,7 @@ const SignToTextPage = () => {
             const formData = new FormData();
             formData.append('image', blob, 'frame.jpg');
             try {
-              const response = await fetch('https://ayushman692--sign.hf.space/predict', {
+              const response = await fetch('http://127.0.0.1:8000/predict', {
                 method: 'POST',
                 body: formData,
               });
@@ -141,4 +141,4 @@ const SignToTextPage = () => {
   );
 };
 
-export default SignToTextPage; 
+export default SignToTextPage;

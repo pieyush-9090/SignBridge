@@ -42,10 +42,9 @@ async def predict(image: UploadFile = File(...)):
             conf = round(float(box.conf[0].item()), 2)
             class_name = model.names[cls_id]
             xyxy = box.xyxy[0].tolist()
-            if class_name.lower() == 'hand':
-                detected_objects.append({
-                    "class": class_name,
-                    "confidence": conf,
-                    "bbox": xyxy
-                })
-    return JSONResponse(content={"predictions": detected_objects}) 
+            detected_objects.append({
+                "class": class_name,
+                "confidence": conf,
+                "bbox": xyxy
+            })
+    return JSONResponse(content={"predictions": detected_objects})
