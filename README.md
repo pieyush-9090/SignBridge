@@ -1,6 +1,6 @@
 # SignBridge
 
-SignBridge is an advanced, full-stack web application that bridges communication between hearing and non-hearing individuals. It provides real-time sign language recognition (Sign-to-Text, STT) and text-to-sign translation (TTS) using modern machine learning (YOLOv8), a Python Flask backend, and a Next.js/React frontend. The project includes a curated set of SVG assets for American Sign Language (ASL) fingerspelling.
+SignBridge is an advanced, full-stack web application that bridges communication between hearing and non-hearing individuals. It provides real-time sign language recognition (Sign-to-Text, STT) and text-to-sign translation (TTS) using modern machine learning (YOLOv8), a Python FastAPI backend, and a Next.js/React frontend. The project includes a curated set of SVG assets for American Sign Language (ASL) fingerspelling.
 
 ---
 
@@ -36,13 +36,13 @@ SignBridge is an advanced, full-stack web application that bridges communication
 [Frontend (Next.js/React)]
    │        ▲
    ▼        │
-[Backend Flask API (YOLOv8)]
+[Backend FastAPI API (YOLOv8)]
    │
    ▼
 [ML Model, SVG Assets]
 ```
 - **Frontend:** Next.js app for UI, TTS, and STT flows. Communicates with backend for STT and serves SVGs for TTS.
-- **Backend:** Flask API for sign recognition (STT) using YOLOv8. Serves predictions to frontend.
+- **Backend:** FastAPI API for sign recognition (STT) using YOLOv8. Serves predictions to frontend.
 - **Assets:** SVG images for each ASL letter (A-Z) for TTS.
 
 ---
@@ -51,8 +51,8 @@ SignBridge is an advanced, full-stack web application that bridges communication
 ```
 sign_bridge/
 ├── backend/
-│   ├── STT/           # Flask server for sign-to-text
-│   │   ├── server.py  # Main Flask app (YOLOv8 inference)
+│   ├── STT/           # FastAPI server for sign-to-text
+│   │   ├── main.py    # Main FastAPI app (YOLOv8 inference)
 │   │   ├── uploads/   # Uploaded images (temp)
 │   │   └── weights/   # ML model weights (best.pt)
 │   └── TTS/
@@ -73,22 +73,27 @@ sign_bridge/
 
 ## Setup & Installation
 ### Prerequisites
-- **Backend:** Python 3.8+, pip, [ultralytics](https://github.com/ultralytics/ultralytics) (YOLOv8), Flask, Flask-CORS
+- **Backend:** Python 3.8+, pip
 - **Frontend:** Node.js 18+, npm/yarn/pnpm
 
 ### 1. Backend (STT)
 ```bash
+# Install dependencies
+pip install -r backend/STT/requirements.txt
+
+# Run the backend server
 cd backend/STT
-pip install flask flask-cors ultralytics
-# Place your YOLOv8 model weights in backend/STT/weights/best.pt
-python server.py
+uvicorn main:app --reload
 ```
-- The server runs on `http://localhost:5000` by default.
+- The server runs on `http://localhost:8000` by default.
 
 ### 2. Frontend (TTS/STT UI)
 ```bash
+# Install dependencies
 cd frontend
 npm install
+
+# Run the frontend development server
 npm run dev
 ```
 - The app runs on `http://localhost:3000` by default.
@@ -161,4 +166,4 @@ npm run dev
 ---
 
 ## License
-This project is open-source and available under the MIT License. 
+This project is open-source and available under the MIT License.
