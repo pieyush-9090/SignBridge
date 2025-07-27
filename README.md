@@ -1,6 +1,7 @@
 # SignBridge
 
-SignBridge is an advanced, full-stack web application that bridges communication between hearing and non-hearing individuals. It provides real-time sign language recognition (Sign-to-Text, STT) and text-to-sign translation (TTS) using modern machine learning (YOLOv8), a Python FastAPI backend, and a Next.js/React frontend. The project includes a curated set of SVG assets for American Sign Language (ASL) fingerspelling.
+SignBridge is an advanced, full-stack web application that bridges communication between hearing and non-hearing individuals. It provides real-time sign language recognition (Sign-to-Text, STT) and text-to-sign translation (TTS) using modern machine learning (YOLOv8), a Python FastAPI backend, and a Next.js/React frontend. The project includes a curated set of SVG assets for American Sign Language (ASL) fingerspelling. Train on  custom ASL datasets, improving
+the model’s ability to recognize and translate 40+ common ASL gestures with high precision.
 
 ---
 
